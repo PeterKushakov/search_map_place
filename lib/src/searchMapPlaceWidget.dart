@@ -108,12 +108,12 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Single
           return Container(
             height: _containerHeight.value,
             decoration: _containerDecoration(),
-            padding: EdgeInsets.only(left: 0, right: 0, top: 15),
+            
             alignment: Alignment.center,
             child: Column(
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                Container(
+                  
                   child: child,
                 ),
                 SizedBox(height: 10),
@@ -187,8 +187,8 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Single
   BoxDecoration _containerDecoration() {
     return BoxDecoration(
       color: Colors.white,
-      borderRadius: BorderRadius.all(Radius.circular(6.0)),
-      boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 20, spreadRadius: 10)],
+      borderRadius: BorderRadius.all(Radius.circular(20.0)),
+      
     );
   }
 
