@@ -106,7 +106,8 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Single
         animation: _animationController,
         builder: (context, _) {
           return Container(
-            height: _containerHeight.value,
+            height: 30,
+            padding:EdgeInsets.only(left: 25),
             decoration: _containerDecoration(),
             
             alignment: Alignment.center,
@@ -187,7 +188,7 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Single
   BoxDecoration _containerDecoration() {
     return BoxDecoration(
       color: Colors.white,
-      borderRadius: BorderRadius.all(Radius.circular(20.0)),
+      borderRadius: BorderRadius.all(Radius.circular(30.0)),
       
     );
   }
