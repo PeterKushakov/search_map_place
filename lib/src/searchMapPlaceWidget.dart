@@ -74,7 +74,7 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Single
     _placePredictions = [];
     geocode = Geocoding(apiKey: widget.apiKey, language: widget.language);
     _animationController = AnimationController(vsync: this, duration: Duration(milliseconds: 500));
-    _containerHeight = Tween<double>(begin: 52, end: 368).animate(
+    _containerHeight = Tween<double>(begin: 55, end: 360).animate(
       CurvedAnimation(
         curve: Interval(0.0, 0.5, curve: Curves.easeInOut),
         parent: _animationController,
@@ -106,6 +106,7 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Single
         animation: _animationController,
         builder: (context, _) {
           return Container(
+            height:_containerHeight,
             decoration: _containerDecoration(),
             alignment: Alignment.center,
             child: Column(
@@ -157,7 +158,7 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Single
     String place = prediction.description;
 
     return MaterialButton(
-      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 3),
+      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 0),
       onPressed: () => _selectPlace(prediction),
       child: ListTile(
         title: Text(
