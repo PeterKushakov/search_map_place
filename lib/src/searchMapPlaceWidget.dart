@@ -109,7 +109,7 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Single
             height:_containerHeight,
             decoration: _containerDecoration(),
             alignment: Alignment.center,
-            child: Column(
+            child: ListView(
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12.0),
@@ -117,7 +117,7 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Single
                 ),
                 Opacity(
                   opacity: _listOpacity.value,
-                  child: Column(
+                  child: ListView(
                     children: <Widget>[
                       _placePredictions.length > 0 ? SizedBox(height: 10) : SizedBox.shrink(),
                       if (_placePredictions.length > 0)
