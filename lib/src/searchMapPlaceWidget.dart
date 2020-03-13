@@ -101,27 +101,24 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Single
       );
 
   // Widgets
-  Widget _searchContainer({Widget child}) {
+   Widget _searchContainer({Widget child}) {
     return AnimatedBuilder(
         animation: _animationController,
         builder: (context, _) {
           return Container(
-            height: 35,
             decoration: _containerDecoration(),
-             padding: EdgeInsets.only(left: 0, right: 0, top: 15),
             alignment: Alignment.center,
             child: Column(
               children: <Widget>[
                 Padding(
-                  
-            padding:EdgeInsets.only(left: 25),
+                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
                   child: child,
                 ),
-                SizedBox(height: 5),
                 Opacity(
                   opacity: _listOpacity.value,
                   child: Column(
                     children: <Widget>[
+                      _placePredictions.length > 0 ? SizedBox(height: 10) : SizedBox.shrink(),
                       if (_placePredictions.length > 0)
                         for (var prediction in _placePredictions)
                           _placeOption(Place.fromJSON(prediction, geocode)),
@@ -181,14 +178,14 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Single
     return InputDecoration(
       hintText: this.widget.placeholder,
       border: InputBorder.none,
-      contentPadding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
+      contentPadding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 0.0),
     );
   }
 
   BoxDecoration _containerDecoration() {
     return BoxDecoration(
       color: Colors.white,
-      borderRadius: BorderRadius.all(Radius.circular(30.0)),
+      borderRadius: BorderRadius.all(Radius.circular(50.0)),
       
     );
   }
