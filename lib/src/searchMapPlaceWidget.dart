@@ -106,7 +106,7 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Single
         animation: _animationController,
         builder: (context, _) {
           return Container(
-            height:_containerHeight,
+           
             decoration: _containerDecoration(),
             alignment: Alignment.center,
             child: ListView(
